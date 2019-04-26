@@ -1,0 +1,46 @@
+<div fxLayout="column"  class="components-container-gt-xs"  [ngClass.xs]="'components-container-xs'"  fxLayoutGap="20px">
+    <div fxFlex class="table-component-holder mat-elevation-z4">
+      <mat-toolbar class="table-header">
+        <h1 class="mat-headline center-align" >Location</h1>
+        <span class="fill-space"></span>
+        <!-- <div class="item item-5 text-right"><button mat-raised-button color="primary" (click)="addUser()"><mat-icon>add</mat-icon>&nbsp;Add User</button></div> -->
+      </mat-toolbar>
+      <div class="table-container">
+          <!-- <mat-form-field>
+              <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+              </mat-form-field> -->
+              
+              <table mat-table [dataSource]="dataSource" >
+              
+              <!-- Position Column -->
+              <ng-container matColumnDef="sn">
+                <th mat-header-cell *matHeaderCellDef> SN. </th>
+                <td mat-cell *matCellDef="let element"> {{element.sn}} </td>
+              </ng-container>
+              
+              <!-- Name Column -->
+              <ng-container matColumnDef="location">
+                <th mat-header-cell *matHeaderCellDef> Location </th>
+                <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+              </ng-container>
+              <!-- Symbol Column -->
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef> id </th>
+                <td mat-cell *matCellDef="let element"  > {{element.id}} </td>
+              </ng-container>
+              <ng-container matColumnDef="status">
+                  <th mat-header-cell *matHeaderCellDef> Status </th>
+                  <td mat-cell *matCellDef="let element" > <span *ngIf="element.status">Active</span> <span *ngIf="!element.status">Inactive</span> </td>
+                </ng-container>
+              <ng-container matColumnDef="action">
+                <th mat-header-cell *matHeaderCellDef> Actions </th>
+                 <td mat-cell *matCellDef="let element" > <button mat-icon-button><mat-icon >create</mat-icon></button> &nbsp;&nbsp; <button mat-icon-button><mat-icon >delete</mat-icon></button> </td> 
+              </ng-container>
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+              </table>
+              <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,29 @@
+table {
+	width: 100%;
+  }
+  
+.mat-form-field {
+	font-size: 14px;
+	width: 100%;
+  }
+.table-header {
+	background-color: #327ebd;
+	color: white;
+	padding: 0 5px;
+}
+.table-container {
+	padding: 5px 15px 15px 15px;
+}
+.table-component-holder {
+	border: 1px solid #327ebd;
+	background-color: white;
+}
+.text-right{
+	text-align: right;
+}
+
+.fill-space {
+	// This fills the remaining space, by using flexbox.
+	// Every toolbar row uses a flexbox row layout.
+	flex: 1 1 auto;
+  }

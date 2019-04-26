@@ -1,0 +1,32 @@
+<ngx-loading [show]="loading" ></ngx-loading>
+<div fxLayout="column" fxFlexFill fxLayoutAlign="center center" style="background-image:url('../../../assets/login11.jpg');
+height: 100%;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover; ">
+    <div fxLayout="column" >
+   
+        <div class="mat-elevation-z2 signin-form">
+            <mat-card>
+                <mat-card-title style="text-align: center">LOGIN
+                </mat-card-title>
+                <mat-card-content>
+                    <form fxLayout="column" fxLayoutAlign="start stretch" [formGroup]="userForm" (ngSubmit)="login()">
+                        <mat-form-field class="full-width">
+                          <input type="text" id="empId" class="input" placeholder="Employee Id"
+                                 formControlName="empId" required matInput>
+                        </mat-form-field>
+                        <mat-error *ngIf="formErrors?.empId">{{ formErrors?.empId }}</mat-error>
+                        <mat-form-field class="full-width">
+                            <input type="password" id="password" class="input" placeholder="password"
+                            formControlName="password" required matInput>
+                        </mat-form-field>
+                        <mat-error *ngIf="formErrors?.password">{{ formErrors?.password}}</mat-error>
+                        <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">log in</button>
+                        <p class="signin-forgot-password"><a class="redirect" [routerLink]="['/forgot-password']" >Forgot Password ?</a></p>
+                    </form>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
